@@ -1,0 +1,53 @@
+# Hello, Universe!
+
+Filename: main.rs
+
+```Rust
+fn main() {
+    println!("Hello, world!");
+}
+```
+
+# Hello, Cargo!
+
+## Creating a project with Cargo:
+
+```
+$ cargo new hello_cargo
+$ cd hello_cargo
+```
+
+Filename: Cargo.toml
+
+```
+[package]
+name = "hello_cargo"
+version = "0.1.0"
+authors = ["Your Name <you@example.com>"]
+edition = "2018"
+
+[dependencies]
+```
+
+## Building and Running a Cargo project
+
+```
+$ cargo build
+```
+
+```
+$ cargo run 
+```
+
+Check if code compiles, but don't build:
+```
+$ cargo check
+```
+
+build for release:
+```
+$ cargo build --release
+```
+
+
+

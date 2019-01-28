@@ -1,0 +1,7 @@
+# rustc: The Rust compiler
+
+## Links
+
+[The rustc book](https://doc.rust-lang.org/rustc/what-is-rustc.html)
+
+[The rustc internals book](https://rust-lang.github.io/rustc-guide/)
