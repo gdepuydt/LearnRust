@@ -1,0 +1,95 @@
+# Programming a Guessing Game
+
+```rust
+use std::io;
+use std::cmp::Ordering;
+use rand::Rng;
+
+fn main() {
+    println!("Guess the number!");
+
+    let secret_number = rand::thread_rng().gen_range(1, 101);
+
+    //println!("The secret number is: {}", secret_number);
+
+    loop {
+        println!("Please input your guess.");
+
+        let mut guess = String::new();
+
+        io::stdin().read_line(&mut guess)
+            .expect("Failed to read line");
+
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
+
+        println!("You guessed: {}", guess);
+
+        match guess.cmp(&secret_number) {
+            Ordering::Less => println!("Too small!"),
+            Ordering::Greater => println!("Too big!"),
+            Ordering::Equal => {
+                println!("You win!");
+                break;
+            }
+        }
+
+    }
+}
+```
+
+import library using `using`
+
+The [*prelude*](https://doc.rust-lang.org/std/prelude/index.html) is the list of things that Rust automatically imports into every Rust program.
+One of the prelude contents is `std::string::{String, ToString}`, heap allocated strings.
+
+The `let`statement creates a variable. `let mut` creates a mutable variable.
+
+`::new()`is an associated function of the String type. *It's a static method* because it is not linked to a particular instance of the String type.
+
+`&` indicates a reference (pointer to the memory location of the *referenced* variable). To make the reference mutable , use `&mut`.
+
+from the API docks, the read_line() function has the following signature
+`std::io::stdin().read_line(&self, buf: &mut String) -> Result<usize>` meaning that the function returns a `Result` type. This is an `enumeration` type that has either `Ok` or `Err`.
+A `Result` instance has an `except()` method: 
+
+`pub fn expect(self, msg: &str) -> T`
+
+The expect() method unwraps a result, yielding the content of an Ok.
+Panics if the value is an Err, with a panic message including the passed message, and the content of the Err.
+
+External crates are code libraries that are not part of the standard library
+
+Filename: Cargo.toml
+
+```
+[dependencies]
+
+rand = "0.3.14"
+```
+
+The number 0.3.14 is actually shorthand for ^0.3.14, which means “any version that has a public API compatible with version 0.3.14.”
+The code is downloaded from [Crates.io](https://crates.io/).
+
+Filename: Cargo.lock
+dependency management file (populated automaticall)
+
+When you do want to update a crate, Cargo provides another command, `update`, which will ignore the Cargo.lock file and figure out all the latest versions that fit your specifications in Cargo.toml.
+```
+$ cargo update
+    Updating registry `https://github.com/rust-lang/crates.io-index`
+    Updating rand v0.3.14 -> v0.3.15
+```
+> Note: You won’t just know which traits to use and which methods and functions to call from a crate. 
+Instructions for using a crate are in each crate’s documentation. 
+Another neat feature of Cargo is that you can run the `cargo doc --open command`, which will build documentation provided by all of your dependencies locally and open it in your browser.
+If you’re interested in other functionality in the rand crate, for example, run `cargo doc --open` and click rand in the sidebar on the left.
+
+Rust allows `variable shadowing`, useful for converting one type into another while reusing the original variable name.
+
+`let guess: u32` annotates the variable type (in this case with built-in type u32).
+
+"A match expression is made up of arms. An arm consists of a pattern and the code that should be run if the value given to the beginning of the match expression fits that arm’s pattern. Rust takes the value given to match and looks through each arm’s pattern in turn."
+

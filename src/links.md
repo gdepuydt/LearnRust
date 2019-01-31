@@ -27,3 +27,7 @@
 ### Rustdoc
 
 - [The Rustdoc Book](https://doc.rust-lang.org/rustdoc/index.html)
+
+### Crates.io
+
+- [Crates.io](https://crates.io/)
