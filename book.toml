@@ -3,7 +3,5 @@ authors = ["gdepuydt"]
 multilingual = false
 src = "src"
 title = "cheatsheet"
-[output.html]
-theme = "src/theme"
 [output.html.playpen]
 editable = true
