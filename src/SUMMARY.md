@@ -9,6 +9,7 @@
 - [Using structs](./using_structs.md)
 - [Enums](./enums.md)
 - [Packages, Crates, and Modules](./packages_crates_modules.md)
+- [Collections](./collections.md)
 - [Appendix](./appendix)
     - [rustup: The Rust toolchain installer](./rustup)
     - [rustc: The Rust compiler ](./rustc)
