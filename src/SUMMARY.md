@@ -10,6 +10,8 @@
 - [Enums](./enums.md)
 - [Packages, Crates, and Modules](./packages_crates_modules.md)
 - [Collections](./collections.md)
+- [Error handling](./error_handling.md)
+- [Generic Types, Traits, and Lifetimes](./generics.md)
 - [Appendix](./appendix)
     - [rustup: The Rust toolchain installer](./rustup)
     - [rustc: The Rust compiler ](./rustc)
