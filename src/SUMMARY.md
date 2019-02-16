@@ -14,6 +14,8 @@
 - [Generic Types and Traits](./generics.md)
 - [Lifetimes](./lifetimes.md)
 - [Tests](./tests.md)
+- [Closures](./closures.md)
+- [Iterators](./iterators.md)
 - [Appendix](./appendix)
     - [rustup: The Rust toolchain installer](./rustup)
     - [rustc: The Rust compiler ](./rustc)
