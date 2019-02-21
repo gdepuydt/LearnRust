@@ -16,6 +16,7 @@
 - [Tests](./tests.md)
 - [Closures](./closures.md)
 - [Iterators](./iterators.md)
+- [Smart Pointers](./smart_pointers.md)
 - [Appendix](./appendix)
     - [rustup: The Rust toolchain installer](./rustup)
     - [rustc: The Rust compiler ](./rustc)
